@@ -35,7 +35,7 @@ const Chat = (props) => {
       <div className="current-chatters">
         <div id="ChatUsers">
           <h3>Currently in room:</h3>
-          <ul>
+          <ul className="chat-ul">
             {chatters.map((chatter, idx) =>
               idx % 2 === 0 ? <li></li> : <li id="chatter">{chatter}</li>
             )}
@@ -47,7 +47,7 @@ const Chat = (props) => {
         <div id="chatter-box">
           <div className="col">
             <div className="row">
-              <ul>
+              <ul className="chat-ul">
                 {messages.map((message, i) => (
                   <li
                     key={i}

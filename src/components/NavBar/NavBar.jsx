@@ -8,21 +8,23 @@ const NavBar = ({ user, handleLogout }) => {
   
   useEffect(() => {
     let sidenav = document.querySelector("#mobile-demo");
-    M.Sidenav.init(sidenav, {edge: 'right'});
+    M.Sidenav.init(sidenav, {edge:'right'});
   }, []);
 
   return (
     <>
       {user ? (
-        <div class="navbar-fixed">
+
         <nav>
           <div id="NavBarDiv" className="nav-wrapper teal lighten-2" >
             {/* <ul id="nav-mobile" className="left hide-on-med-and-down">
               <li id="userName" className="nav-link">Welcome, {user.name}</li>
             </ul> */}
-            <a href="/" class="brand-logo">devSrc</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
-            <ul id="NavBarList" className="right hide-on-med-and-down">
+
+            <a href="#" className="brand-logo">devSrc</a>
+            <a href="#" data-target="mobile-demo" className="sidenav-trigger right"><i className="material-icons">menu</i></a>
+            <ul id="NavBarList" className="right hide-on-med-and-down davidsNavBar">
+
             <li id="myNotebook">
               <a className="active" href="/myNotebook">myNotebook</a>
             </li>
@@ -44,7 +46,7 @@ const NavBar = ({ user, handleLogout }) => {
             </ul>
           </div>
 
-        <ul class="sidenav" id="mobile-demo">
+        <ul className="sidenav" id="mobile-demo">
          <li id="myNotebook">
               <a className="active" href="/myNotebook">myNotebook</a>
             </li>
@@ -64,10 +66,9 @@ const NavBar = ({ user, handleLogout }) => {
               <a className="active" href=" " onClick={handleLogout}>logOut</a></li>
         </ul>
         </nav>
-        </div>
 
       ) : (
-        <div class="navbar-fixed">
+
           <nav>
             <div className="nav-wrapper teal lighten-2">
               <ul id="nav-mobile" className="right">
@@ -84,7 +85,8 @@ const NavBar = ({ user, handleLogout }) => {
               </ul>
             </div>
           </nav>
-        </div>
+
+
       )}
     </>
   );

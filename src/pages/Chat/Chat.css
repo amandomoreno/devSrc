@@ -29,8 +29,8 @@ hr {
   flex-direction: column-reverse;
 }
 
-ul {
-  display: flex;
+.chat-ul {
+  display: flex; 
   flex-direction: column-reverse;
 }
 

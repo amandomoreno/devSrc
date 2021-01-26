@@ -26,7 +26,7 @@ Feel free to check out where we started with our planning phase on Trello!
 [Trello Board](https://trello.com/b/aNIS4obZ/devsrc) 
 ![Trello Board Img](https://i.imgur.com/vbqoX6S.png)   
 
-### Technologies Used: Node.JS, React, Postman, GitHub, ExpressJS, JavaScript, CSS, HTML, Trello, Whimsical, LucidChart, Materialize, Socket.io, MondoDB, Mongoose.
+### Technologies Used: Node.JS, React, Postman, GitHub, ExpressJS, JavaScript, CSS, HTML, Trello, Whimsical, LucidChart, Materialize, Socket.io, MongoDB, Mongoose.
 
 ### Icebox:
 - [ ] Have multiple chat rooms. 

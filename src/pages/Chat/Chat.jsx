@@ -7,7 +7,7 @@ const Chat = (props) => {
   const { messages, sendMessage } = useChat(room);
   const [newMessage, setNewMessage] = useState("");
   const { chatters, setChatters } = useChat(room);
-  // const [updatedChatters] = useState([])
+
 
   const handleNewMessageChange = (e) => {
     setNewMessage(e.target.value);
@@ -17,17 +17,6 @@ const Chat = (props) => {
     sendMessage(newMessage);
     setNewMessage("");
   };
-
-  // function updateChatters(chatters){
-  //   chatters.forEach((chatter, idx) => {
-  //     if (idx % 2 === 1){
-  //       updatedChatters.push(chatter)
-  //       console.log('this is', updatedChatters)
-  //     }
-  //     })
-  // }
-
-  // updateChatters()
 
   return (
     <div>

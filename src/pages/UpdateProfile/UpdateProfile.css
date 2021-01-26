@@ -11,30 +11,30 @@
     border-radius: 5px;
 }
   
-  .col {
-    margin: 10px;
-  }
-  
-  .input-field {
-    background-color: white;
-    color: black;
-    margin: 0px;
-  }
-  
-  .tag-selections {
-    margin: 15px;
-  }
-  
-  .tags {
-    display: flex;
-    padding: 10px auto;
-  }
-  
-  .card-text {
-    color: black;
-    place-content: left;
-  }
-  
-  .btn {
-    margin-top: 20px;
-  }
+.col {
+  margin: 10px;
+}
+
+.input-field {
+  background-color: white;
+  color: black;
+  margin: 0px;
+}
+
+.tag-selections {
+  margin: 15px;
+}
+
+.tags {
+  display: flex;
+  padding: 10px auto;
+}
+
+.card-text {
+  color: black;
+  place-content: left;
+}
+
+.btn {
+  margin-top: 20px;
+}

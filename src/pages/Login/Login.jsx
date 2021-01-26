@@ -28,12 +28,6 @@ class LoginPage extends Component {
     }
   };
 
-  // isFormInvalid() {
-  //   const { email, password } = this.state;
-  //   if(email && password);
-  //   return (type(submit));
-  // }
-
   updateMessage = (msg) => {
     this.setState({ message: msg });
   };
@@ -77,7 +71,6 @@ class LoginPage extends Component {
           <button
             type="submit"
             className="btn"
-            // disabled={this.isFormInvalid()}
           >
             Log In
           </button>

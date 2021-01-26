@@ -6,8 +6,7 @@ import * as flashCardAPI from '../../services/flashCardApi'
 
 class FlashCardList extends Component {
     state = {
-        flashCards: [],
-        
+        flashCards: [],  
     }
 
     async componentDidMount() {
@@ -17,7 +16,6 @@ class FlashCardList extends Component {
 
     handleAddFlashCard = async (newFlashCardData) => {
         const newFlashCard = await flashCardAPI.create(newFlashCardData);
-        console.log(newFlashCard)
         this.setState(
           (state) => ({
             flashCards: [...state.flashCards, newFlashCard],
@@ -36,6 +34,10 @@ class FlashCardList extends Component {
     render() { 
         return ( 
         <>
+            <AddFlashcard 
+                handleAddFlashCard={this.handleAddFlashCard}
+                user={this.props.user}
+            />
         <div className='flashCardStack'>
             <FlashCardStack 
                 flashCards={this.state.flashCards}
@@ -43,24 +45,10 @@ class FlashCardList extends Component {
                 user={this.props.user}
             />
         </div>
-            <AddFlashcard 
-                handleAddFlashCard={this.handleAddFlashCard}
-                user={this.props.user}
-            />
+            
         </>
          );
         }
 }
  
 export default FlashCardList;
-
-
-// import react
-// import styling
-
-// define class
-// bring in user and state from FlashCardStackShow as props
-// return a grid that will map all of "FlashCard" components per specific user
-// pass state, user and delete handler to each mapped card
-
-// export class

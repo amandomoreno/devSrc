@@ -13,7 +13,6 @@ const useChat = (room) => {
   
   useEffect(() => {
     let user = authService.getUser()
-    //console.log(user.name)
     socketRef.current = socketIOClient(SOCKET_SERVER_URL, {
       query: { room: room, user: user.name },
     });
@@ -46,12 +45,7 @@ const useChat = (room) => {
     });
   };
 
-  // const setChatters = ()
-
   return { messages, sendMessage, chatters };
-
-
-
 };
 
 export default useChat;

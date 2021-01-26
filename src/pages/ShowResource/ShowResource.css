@@ -1,0 +1,32 @@
+.overflow-auto {
+    height: 20rem;
+    width: 25rem;
+    overflow-y: scroll;
+    background-color: white;
+    border: 1px solid grey;
+    padding: 10px;
+  }
+  
+ .showResource {
+  background-color: #c5dedd;
+  width: 70rem;
+  height: 45rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 25px auto;
+  padding: 30px;
+  border-radius: 5px;
+  }
+
+  .resourceLeft{
+    text-overflow: ellipsis;
+    width: 35rem;
+  }
+  
+
+  .resource-title{
+    margin: 10px 10px 10px 0;
+    justify-content: left;
+  }

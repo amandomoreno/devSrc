@@ -50,32 +50,32 @@ export function getMySavedItems(user) {
 }
 
 export function search(queryString) {
-    return fetch(
-        `${BASE_URL}search`,
-        {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-            Authorization: "Bearer " + tokenService.getToken(),
-          },
-          body: JSON.stringify(queryString)
-        },
-        { mode: "cors" }
-      ).then((res) => res.json());
+  return fetch(
+    `${BASE_URL}search`,
+    {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        Authorization: "Bearer " + tokenService.getToken(),
+      },
+      body: JSON.stringify(queryString)
+    },
+    { mode: "cors" }
+  ).then((res) => res.json());
 }
 
 export function addToSavedItems(resource) {
   return fetch(
-      `${BASE_URL}/myResources`,
-      {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-          Authorization: "Bearer " + tokenService.getToken(),
-        },
-        body: JSON.stringify(resource)
+    `${BASE_URL}/myResources`,
+    {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+        Authorization: "Bearer " + tokenService.getToken(),
       },
-      { mode: "cors" }
-    ).then((res) => res.json());
+      body: JSON.stringify(resource)
+    },
+    { mode: "cors" }
+  ).then((res) => res.json());
 }
 

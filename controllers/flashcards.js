@@ -33,9 +33,6 @@ function create(req, res){
       res.json(flashCard)
     })
   })
-  // .then((flashCard) => {
-  //   res.json(flashCard)
-  // })
   .catch((err) => {
     res.json(err)
   })

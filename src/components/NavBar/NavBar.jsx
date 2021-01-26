@@ -14,14 +14,10 @@ const NavBar = ({ user, handleLogout }) => {
   return (
     <>
       {user ? (
-
+        <div className="navbar-fixed">
         <nav>
           <div id="NavBarDiv" className="nav-wrapper teal lighten-2" >
-            {/* <ul id="nav-mobile" className="left hide-on-med-and-down">
-              <li id="userName" className="nav-link">Welcome, {user.name}</li>
-            </ul> */}
-
-            <a href="#" className="brand-logo">devSrc</a>
+            <a href="/" className="brand-logo">devSrc</a>
             <a href="#" data-target="mobile-demo" className="sidenav-trigger right"><i className="material-icons">menu</i></a>
             <ul id="NavBarList" className="right hide-on-med-and-down davidsNavBar">
 
@@ -66,9 +62,9 @@ const NavBar = ({ user, handleLogout }) => {
               <a className="active" href=" " onClick={handleLogout}>logOut</a></li>
         </ul>
         </nav>
-
+        </div>
       ) : (
-
+        <div className="navbar-fixed">
           <nav>
             <div className="nav-wrapper teal lighten-2">
               <ul id="nav-mobile" className="right">
@@ -85,7 +81,7 @@ const NavBar = ({ user, handleLogout }) => {
               </ul>
             </div>
           </nav>
-
+        </div>
 
       )}
     </>

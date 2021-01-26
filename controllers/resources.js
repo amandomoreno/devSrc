@@ -1,4 +1,3 @@
-const resource = require("../models/resource");
 const Resource = require("../models/resource");
 const User = require("../models/user");
 

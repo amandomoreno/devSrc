@@ -1,7 +1,7 @@
 #AddFlashCard {
   background-color: #c5dedd;
   width: 70rem;
-  height: 28rem;
+  height: 32rem;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -40,5 +40,5 @@ h3 {
 }
 
 .btn {
-  margin-top: 20px;
+  margin-top: 0px;
 }

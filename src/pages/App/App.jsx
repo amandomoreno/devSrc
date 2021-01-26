@@ -10,16 +10,11 @@ import Chat from "../Chat/Chat";
 import AddResource from "../AddResource/AddResource";
 import * as resourceAPI from "../../services/resourceApi";
 import ShowResource from "../ShowResource/ShowResource";
-import * as flashCardAPI from "../../services/flashCardApi";
 import FlashCardList from "../FlashCardList/FlashCardList";
-import AddNewNote from "../../components/AddNote/AddNote";
-import SearchResource from '../Search/Search'
-import * as noteAPI from '../../services/noteApi'
-import UserProfile from '../../pages/UserProfile/UserProfile'
-import UpdateProfile from '../../pages/UpdateProfile/UpdateProfile'
-import userInfo from "../UserInfo/UserInfo";
-import * as userAPI from '../../services/userService'
-
+import SearchResource from "../Search/Search";
+import UserProfile from "../../pages/UserProfile/UserProfile";
+import UpdateProfile from "../../pages/UpdateProfile/UpdateProfile";
+import * as userAPI from "../../services/userService";
 
 class App extends Component {
   state = {
@@ -27,13 +22,13 @@ class App extends Component {
     resources: [],
     savedItems: [],
     notes: [],
-    searchResults: []
+    searchResults: [],
   };
 
   async componentDidMount() {
     if (this.state.user) {
       const user = await resourceAPI.getMySavedItems(this.state.user);
-      this.setState({ savedItems: user.savedItems});
+      this.setState({ savedItems: user.savedItems });
     }
   }
 
@@ -57,37 +52,42 @@ class App extends Component {
     );
   };
 
-  handleDeleteResource = async id => {
-    await resourceAPI.deleteFromSaved(id)
-    this.setState((state) => ({
-      savedItems: state.savedItems.filter(r => r._id !== id)
-    }), () => this.props.history.push('/myNotebook'))
-    }
+  handleDeleteResource = async (id) => {
+    await resourceAPI.deleteFromSaved(id);
+    this.setState(
+      (state) => ({
+        savedItems: state.savedItems.filter((r) => r._id !== id),
+      }),
+      () => this.props.history.push("/myNotebook")
+    );
+  };
 
   handleSearch = async (searchData) => {
-    const newSearch = await resourceAPI.search(searchData)
+    const newSearch = await resourceAPI.search(searchData);
     this.setState((state) => ({
-      searchResults: [...newSearch]
-    }))
-  }
+      searchResults: [...newSearch],
+    }));
+  };
 
   handleAddToSavedItems = async (resource) => {
-    const user = await resourceAPI.addToSavedItems(resource)
-    this.setState((state) => ({
-      savedItems: [...state.savedItems, resource]
-    }),
-    () => this.props.history.push("/myNotebook")
-    )
-  }
+    const user = await resourceAPI.addToSavedItems(resource);
+    this.setState(
+      (state) => ({
+        savedItems: [...state.savedItems, resource],
+      }),
+      () => this.props.history.push("/myNotebook")
+    );
+  };
 
   handleUpdateUser = async (formData) => {
-    const user = await userAPI.updateUser(formData)
-    this.setState((state) => ({
-      user: user
-    }), () => this.props.history.push("/myProfile"))
-  }
-
-
+    const user = await userAPI.updateUser(formData);
+    this.setState(
+      (state) => ({
+        user: user,
+      }),
+      () => this.props.history.push("/myProfile")
+    );
+  };
 
   render() {
     const { user } = this.state;
@@ -99,9 +99,11 @@ class App extends Component {
           path="/"
           render={() => (
             <main>
-              <div id="intro">
-              <h1>Welcome to devSrc,</h1>
-              <h4>a resource sharing app for Software Engineers.</h4>
+              <div className="landing-container">
+                <div id="intro">
+                  <h2>Welcome to devSrc,</h2>
+                  <h4>a resource sharing app for Software Engineers.</h4>
+                </div>
               </div>
             </main>
           )}
@@ -141,7 +143,7 @@ class App extends Component {
         <Route
           exact
           path="/myNotebook"
-          render={({history}) =>
+          render={({ history }) =>
             authService.getUser() ? (
               <AddResource
                 history={history}
@@ -171,7 +173,7 @@ class App extends Component {
         <Route
           exact
           path="/studyBuddy"
-          render={({history}) =>
+          render={({ history }) =>
             authService.getUser() ? (
               <FlashCardList
                 history={history}
@@ -184,26 +186,21 @@ class App extends Component {
             )
           }
         />
-        
-         <Route
+        <Route
           exact
           path="/search"
           render={() => (
             <SearchResource
-            searchResults={this.state.searchResults}
-            handleSearch={this.handleSearch}
-            user={this.state.user}
+              searchResults={this.state.searchResults}
+              handleSearch={this.handleSearch}
+              user={this.state.user}
             />
           )}
         />
         <Route
           exact
           path="/myProfile"
-          render={() => (
-            <UserProfile
-            user={this.state.user}
-            />
-          )}
+          render={() => <UserProfile user={this.state.user} />}
         />
         <Route
           exact
@@ -214,7 +211,7 @@ class App extends Component {
               handleUpdateUser={this.handleUpdateUser}
             />
           )}
-          />
+        />
       </>
     );
   }

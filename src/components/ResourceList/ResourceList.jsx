@@ -5,7 +5,7 @@ import './ResourceList.css'
 const ResourceList = (props) => {
   return (
     <>
-    <h2 className="MySavedItems">My Saved Items</h2>
+      <h2 className="MySavedItems">My Saved Items</h2>
       <div className="saved-resources">
         {props.savedItems.map((resource) => (
           <ResourceCard

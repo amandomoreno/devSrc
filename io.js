@@ -15,10 +15,6 @@ console.log(`Client ${socket.id} connected`);
 // This is for when someone initially joins a conversation
 const { room } = socket.handshake.query;
 socket.join(room);
-// const {user} = socket.handshake.query
-//  console.log(user)
-//  chatters[socket.id] = (user)
-//  console.log(chatters)
 
 //This is adding a new user to the chatters
 socket.on('register-user', (user) => {
@@ -40,8 +36,5 @@ socket.on("disconnect", () => {
   socket.leave(room);
 });
 });
-
-
-
 
 module.exports = io

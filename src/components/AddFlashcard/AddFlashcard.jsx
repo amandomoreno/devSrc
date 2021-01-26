@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import FlashCardStack from "../FlashCardStack/FlashCardStack";
-import * as flashCardAPI from "../../services/flashCardApi";
 import './AddFlashcard.css'
 
 class AddFlashCard extends Component {
@@ -23,13 +21,6 @@ class AddFlashCard extends Component {
     backSide: "",
     tag: []}})
   };
-
-  // handleDeleteFlashCard = async (id) => {
-  //     await flashCardAPI.deleteFlashCard(id)
-  //     this.setState((state) => ({
-  //         flashCards: state.flashCards.filter((f) => f._id !== id)
-  //     }), () => this.props.history.push('/studyBuddy'))
-  // }
 
   handleChange = (e) => {
     const formData = {
@@ -196,15 +187,3 @@ class AddFlashCard extends Component {
 
 export default AddFlashCard;
 
-// import react
-// import styling
-
-// define class
-// bring in state and user from app.js
-// set validForm to false
-// addCard functionality from app.js
-// returns a render of a form for the user to define what the front and back of the card will contain,
-// along with checkboxes to define tags
-// submit button that saves card for user in appropriate card stack
-
-// export class
